@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Merge Two Sorted Linked Lists</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide active">
+  <h1>Merge Two Sorted Linked Lists</h1>
+  <p>From real life → interactive step-by-step explanation</p>
+  <button onclick="next()">Next ➡</button>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide">
+  <h2>Real-Life Example</h2>
+  <p>Consider two lists of people sorted according to their height</p>
+
+  <div class="line">
+    <div class="person">A</div> →
+    <div class="person">C</div> →
+    <div class="person">E</div>
+  </div>
+
+  <div class="line">
+    <div class="person">B</div> →
+    <div class="person">D</div> →
+    <div class="person">F</div>
+  </div>
+
+  <button onclick="next()">Next ➡</button>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+  <h2>Real-Life Example</h2>
+  <p>The people are merged and sorted according to their height</p>
+  <p><b>Output</b></p>
+
+  <div class="line">
+    <div class="person">A</div> →
+    <div class="person">B</div> →
+    <div class="person">C</div> →
+    <div class="person">D</div> →
+    <div class="person">E</div> →
+    <div class="person">F</div>
+  </div>
+
+  <button onclick="next()">Next ➡</button>
+</div>
+
+<!-- SLIDE 4 (INPUT) -->
+<div class="slide">
+  <h2>Enter Example Input</h2>
+  <p>Enter sorted values (comma separated)</p>
+
+  <input id="list1" placeholder="List 1: e.g. 1,3,5">
+  <input id="list2" placeholder="List 2: e.g. 2,4,6">
+
+  <button onclick="startMerge()">Start Explanation ➡</button>
+</div>
+
+<!-- DYNAMIC SLIDES -->
+<div id="dynamicSlides"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

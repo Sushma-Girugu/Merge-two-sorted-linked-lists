@@ -1,0 +1,173 @@
+/* =====================
+   BASE STYLES
+   ===================== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background: #b48de8;
+  color: white;
+}
+
+.slide.active {
+  display: flex;
+  animation: slideIn 0.9s ease;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+/* =====================
+   INPUTS & BUTTONS
+   ===================== */
+input {
+  padding: 12px;
+  margin: 10px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  width: 280px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+  box-shadow: 0 0 12px rgba(255,255,255,0.6);
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: white;
+  color: #9929EA;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* =====================
+   LINKED LIST LAYOUT
+   ===================== */
+.line {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  font-size: 22px;
+  perspective: 1200px;
+}
+
+/* =====================
+   NODES & PERSONS
+   ===================== */
+.person,
+.node {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin: 0 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: appear 0.7s ease forwards;
+}
+
+/* Hover animation */
+.person:hover,
+.node:hover {
+  transform: translateY(-14px) scale(1.15) rotateY(14deg);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+
+/* =====================
+   NODE STATES
+   ===================== */
+.node.done,
+.node.final {
+  background: #9929EA;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+/* =====================
+   TIMELAPSE EFFECT
+   ===================== */
+.line .person:nth-child(1),
+.line .node:nth-child(1) { animation-delay: 0.1s; }
+
+.line .person:nth-child(2),
+.line .node:nth-child(2) { animation-delay: 0.3s; }
+
+.line .person:nth-child(3),
+.line .node:nth-child(3) { animation-delay: 0.5s; }
+
+.line .person:nth-child(4),
+.line .node:nth-child(4) { animation-delay: 0.7s; }
+
+.line .person:nth-child(5),
+.line .node:nth-child(5) { animation-delay: 0.9s; }
+
+/* =====================
+   ANIMATIONS
+   ===================== */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(153,41,234,0.6);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 35px rgba(153,41,234,0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(153,41,234,0.6);
+  }
+}
